@@ -248,7 +248,7 @@ Output fields:
 
 - `LOW` means no loud surface habits. It does not mean the draft is specific, good, or written by a person.
 - `MODERATE` or `HIGH`: open `flagged_sentences` and read them. Each is a question for you as the editor, not a verdict. A flagged sentence that earns its place can stay.
-- Sentences are split on terminal punctuation, so a heading with no full stop merges into the sentence after it. Opener checks look at how a sentence starts, so a word that merely begins with "so" ("Software", "Some", "Sometimes") can count as a connective and any first word ending in "-ing" ("Spring", "Morning") as participial. Read before you act.
+- Sentences are split on terminal punctuation, so a heading with no full stop merges into the sentence after it. Opener checks match whole words, so "Sometimes" is not a connective and "During" or "Something" is not a participle. Read flagged sentences before you act.
 - The word lists are English. The scan sees surface habits only; the substantive tells (generic claims, no stance, template structure) need your reading, which is what Steps 4 and 8 are for.
 - Do not delete sentences to lower a number. A rating moves when the writing improves.
 

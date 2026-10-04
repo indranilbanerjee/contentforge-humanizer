@@ -113,3 +113,7 @@ The tests check the scan on three fixtures (an AI-sounding paragraph, a plain hu
 The pattern catalog (`skills/humanizer/patterns.json`) is adapted from Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) by WikiProject AI Cleanup (CC BY-SA), with structure influenced by blader/humanizer (MIT). See the file's `_attribution` field.
 
 MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Indranil Banerjee.
+
+## License
+
+Code: MIT. The pattern catalog (`skills/humanizer/patterns.json`) adapts Wikipedia content and is distributed under CC BY-SA 4.0 — see [NOTICE.md](NOTICE.md).
