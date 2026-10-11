@@ -277,7 +277,7 @@ def main():
     if target == "-":
         _ensure_utf8_stdout()
         try:
-            raw = sys.stdin.buffer.read().decode("utf-8", errors="replace")
+            raw = sys.stdin.buffer.read().decode("utf-8-sig", errors="replace")
             # Same newline handling as reading a file in text mode.
             text = raw.replace("\r\n", "\n").replace("\r", "\n")
         except OSError as exc:
@@ -288,7 +288,7 @@ def main():
             _finish({"error": f"file not found: {path}",
                      "recovery": "Pass the path to the draft you are editing."})
         try:
-            text = path.read_text(encoding="utf-8", errors="replace")
+            text = path.read_text(encoding="utf-8-sig", errors="replace")   # a byte-order mark (PowerShell 5.1, Notepad) is not text
         except OSError as exc:
             _finish({"error": f"could not read {path}: {exc}"})
 

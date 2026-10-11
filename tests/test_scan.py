@@ -232,6 +232,18 @@ class TestCommandLine(unittest.TestCase):
                         self.assertEqual(code, 0)
                         self.assertEqual(json.loads(out), hero.ai_tell_scan(text))
 
+    def test_a_byte_order_mark_is_not_part_of_the_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            plain, bom = Path(tmp) / "plain.md", Path(tmp) / "bom.md"
+            plain.write_bytes(AI_SOUNDING.encode("utf-8"))
+            bom.write_bytes(b"\xef\xbb\xbf" + AI_SOUNDING.encode("utf-8"))
+            expected = hero.ai_tell_scan(AI_SOUNDING)
+            for label, args, stdin in (("file", [str(bom)], None), ("stdin", ["-"], b"\xef\xbb\xbf" + AI_SOUNDING.encode("utf-8"))):
+                with self.subTest(source=label):
+                    code, out, _ = run_cli(args, stdin=stdin, cwd=tmp)
+                    self.assertEqual(code, 0)
+                    self.assertEqual(json.loads(out), expected)
+
     def test_stdin(self):
         code, out, _ = run_cli(["-"], stdin=AI_SOUNDING.encode("utf-8"))
         self.assertEqual(code, 0)
