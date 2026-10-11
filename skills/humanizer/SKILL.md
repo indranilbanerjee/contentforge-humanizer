@@ -213,7 +213,7 @@ Every specific in the "after" line is in the writer's notes. Nothing was invente
 
 ## Running the scan
 
-`<skill-dir>` is the folder that contains this SKILL.md.
+`<skill-dir>` is the folder that contains this SKILL.md. Run the script with Python 3.10 or newer: `python`, or `python3` where `python` is not found (macOS, many Linux systems).
 
 ```bash
 python <skill-dir>/scripts/ai_tell_scan.py draft.md
